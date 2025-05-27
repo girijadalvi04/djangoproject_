@@ -1,0 +1,38 @@
+h1{
+    color: palevioletred;
+    font-style: italic;
+    /* background-color: aqua;  */
+font-weight: bolder;
+
+} 
+body{
+    background-image:  linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url("../images/istockphoto.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+     /* filter: brightness(1) */
+ 
+    /* background-color: rgba(240, 248, 255, 0); */
+ /* filter: brightness(x); */
+} 
+table{
+   width: 80%;
+    border-collapse: collapse;
+    border: 1px solid black;
+ border: none;
+    /* margin-top: 20px;   */
+
+} 
+tr:nth-child(odd){
+    /* background-color: black; */
+    background-color: pink;
+    color: aliceblue;
+}
+ tr:nth-child(even) {
+   background-color:powderblue;
+   color: aliceblue;
+} 
+th{
+    font-weight: 900;
+}
