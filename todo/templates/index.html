@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'todo/css/style.css' %}">
+</head>
+
+<body>
+    <h1>To-Do List</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Task</button>
+    </form> <br><br>
+
+    <!-- <ul>  
+        {% for task in tasks %}
+            <li>
+                {{ task.title }} - {% if task.completed %}✅{% else %}❌{% endif %}
+                <a href="{% url 'delete' task.id %}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul> -->
+
+    
+
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Task Title</th>
+                    <th>Completed</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for task in tasks %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ task.title }}</td>
+                    <td>{% if task.completed %}✅{% else %}❌{% endif %}</td>
+                    <td><a href="{% url 'delete' task.id %}">Delete</a></td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4">No tasks available.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+
+
+
+
+  
+</body>
+
+</html>
